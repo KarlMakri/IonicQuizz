@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-home',
@@ -7,6 +10,15 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(
+    public router: Router,
+    public alertCtrl: AlertController,
+  ) {}
+
+  goToQuestion(){
+    // Utiliser le router angular pour charger la page help
+    // console.log(this.router)
+    this.router.navigate(['/question'])
+  }
 
 }
